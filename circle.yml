@@ -15,4 +15,5 @@ dependencies:
 test:
   override:
     - flake8 --statistics avtozip/
-    - python avtozip/manage.py test
+    - coverage run --branch avtozip/manage.py test
+    - codecov --token=f78171d5-9f65-42b1-8967-2501724c89ae

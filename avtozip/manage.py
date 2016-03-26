@@ -1,9 +1,12 @@
 #!/usr/bin/env python
+
+"""General entry point for Django project."""
+
 import os
 import sys
 
-if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "avtozip.settings")
+if __name__ == '__main__':
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'avtozip.settings')
 
     from django.core.management import execute_from_command_line
 

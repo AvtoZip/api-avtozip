@@ -1,0 +1,1 @@
+"""AvtoZip project package."""

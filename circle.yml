@@ -8,6 +8,11 @@ machine:
   timezone:
     Europe/Moscow
 
+dependencies:
+  override:
+    - pip install -r requirements.txt -r requirements-dev.txt
+
 test:
   override:
+    - flake8 --statistics avtozip/
     - python avtozip/manage.py test

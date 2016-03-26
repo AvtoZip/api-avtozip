@@ -1,4 +1,4 @@
-"""Store models."""
+"""Store application models."""
 
 from django.db import models
 

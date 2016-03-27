@@ -10,10 +10,9 @@ machine:
 
 dependencies:
   override:
-    - pip install -r requirements.txt -r requirements-dev.txt
+    - make install
 
 test:
   override:
-    - flake8 --statistics avtozip/
-    - coverage run --branch avtozip/manage.py test
+    - make test
     - codecov --token=f78171d5-9f65-42b1-8967-2501724c89ae

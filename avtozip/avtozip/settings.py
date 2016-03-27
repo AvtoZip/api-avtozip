@@ -1,5 +1,5 @@
 """Django settings for avtozip project."""
-# sdfsdf
+
 import os
 
 import dj_database_url

@@ -4,7 +4,7 @@ from django.db import models
 
 
 class Product(models.Model):
-    """Class for any product in the store."""
+    """Model for any product in the store."""
 
     article = models.CharField(max_length=50)
     name = models.CharField(max_length=200)

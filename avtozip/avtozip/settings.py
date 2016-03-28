@@ -72,6 +72,7 @@ WSGI_APPLICATION = 'avtozip.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
+
 DATABASE_URL = os.environ.get(
     'DATABASE_URL',
     '{schema}://{username}:{password}@{hostname}:{port}/{database}'.format(
@@ -105,6 +106,10 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+# Django TastyPie settings
+
+TASTYPIE_DEFAULT_FORMATS = ['json']
 
 
 # Internationalization

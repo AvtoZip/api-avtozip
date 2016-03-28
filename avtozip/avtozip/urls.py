@@ -5,13 +5,17 @@ from django.contrib import admin
 
 from tastypie.api import Api
 
-from store.api.resources import ProductResource
+from store.api.resources import (
+    ProductCategoryResource,
+    ProductResource,
+)
 
 from . import views
 
 
 v1_api = Api(api_name='v1')
 v1_api.register(ProductResource())
+v1_api.register(ProductCategoryResource())
 
 
 urlpatterns = [

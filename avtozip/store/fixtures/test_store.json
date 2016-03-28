@@ -1,0 +1,68 @@
+[
+{
+  "model": "store.productcategory",
+  "pk": 1,
+  "fields": {
+    "name": "TestParent",
+    "parent": null
+  }
+},
+{
+  "model": "store.productcategory",
+  "pk": 2,
+  "fields": {
+    "name": "TestChild_1",
+    "parent": 1
+  }
+},
+{
+  "model": "store.productcategory",
+  "pk": 3,
+  "fields": {
+    "name": "TestChild_2",
+    "parent": 1
+  }
+},
+{
+  "model": "store.product",
+  "pk": 1,
+  "fields": {
+    "article": "1",
+    "name": "TestProduct_1",
+    "category": 2,
+    "cost": "1.00",
+    "price": "1.00",
+    "count": "1.00"
+  }
+},
+{
+  "model": "store.product",
+  "pk": 2,
+  "fields": {
+    "article": "2",
+    "name": "TestProduct_2",
+    "category": 3,
+    "cost": "2.00",
+    "price": "2.00",
+    "count": "2.00"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$24000$RI8evSsIktIq$COY3UR2EIRpyiKzFHLkMnjOyFNUSAUBWKiPaqSmKRKg=",
+    "last_login": "2016-03-28T00:41:00.726Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2016-03-28T00:39:33.176Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]

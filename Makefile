@@ -24,6 +24,7 @@ SERVER_PORT ?= 8012
 # Other settings
 DJANGO_SERVER ?= runserver
 DJANGO_SHELL ?= shell_plus
+TEST_ARGS = avtozip
 
 all: install build
 

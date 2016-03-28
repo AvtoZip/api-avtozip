@@ -28,3 +28,9 @@ class Product(models.Model):
     cost = models.DecimalField(max_digits=10, decimal_places=2)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     count = models.DecimalField(max_digits=10, decimal_places=2)
+
+    def __str__(self):
+        """String representation of product model."""
+        return '<{model_name}#{id} ({article}): {name}>'.format(
+            model_name=self.__class__.__name__, id=self.id, article=self.article, name=self.name,
+        )

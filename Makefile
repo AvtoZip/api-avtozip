@@ -1,12 +1,17 @@
 .PHONY: build clean devserver fasttest install install-py \
-        lint manage migrate server shell test
+		lint manage migrate server shell test
 
 # Project settings
+LEVEL ?= development
 PROJECT = avtozip
 
 # Virtual environment settings
 ENV ?= ./env
-REQUIREMENTS ?= -r requirements-dev.txt
+ifeq ($(LEVEL),development)
+	REQUIREMENTS = -r requirements-dev.txt
+else:
+	REQUIREMENTS = -r requirements.txt
+endif
 
 # Python commands
 COVERAGE = coverage
@@ -22,9 +27,9 @@ SERVER_HOST ?= 0.0.0.0
 SERVER_PORT ?= 8012
 
 # Other settings
-DJANGO_SERVER ?= runserver
-DJANGO_SHELL ?= shell_plus
-TEST_ARGS = avtozip
+DJANGO_SERVER = runserver
+DJANGO_SHELL = shell_plus
+TEST_ARGS ?= avtozip
 
 all: install build
 
@@ -55,7 +60,9 @@ else
 endif
 
 lint:
+ifeq ($(LEVEL),development)
 	$(FLAKE8) --statistics ./$(PROJECT)/
+endif
 
 manage:
 	$(PYTHON) ./$(PROJECT)/manage.py $(COMMAND)

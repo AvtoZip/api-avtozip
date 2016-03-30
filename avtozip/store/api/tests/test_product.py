@@ -1,0 +1,1 @@
+"""Test ProductResource functionality."""

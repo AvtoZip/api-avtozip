@@ -1,0 +1,30 @@
+div.div-table {
+    display:table;
+    background-color:#eee;
+    border:1px solid  #666666;
+    border-spacing:5px;/*cellspacing:poor IE support for  this*/
+}
+
+div.div-table-row {
+    display:table-row;
+    #width:auto;
+    #clear:both;
+}
+
+div.div-table-row-header {
+    display: table-row;
+    font-weight: bold;
+    text-align: center;
+}
+
+div.div-table-col {
+    #float:left;/*fix for  buggy browsers*/
+    display:table-cell;
+    padding: 5px;
+    margin: 5px;
+    background-color:#e6e6e6;
+}
+
+div.div-table-row-header div.div-table-col {
+    background-color: #ccc;
+}

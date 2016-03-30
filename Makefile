@@ -76,4 +76,4 @@ test: clean lint
 	$(COVERAGE) erase
 	$(COVERAGE) run $(PROJECT)/manage.py test $(TEST_ARGS)
 	$(COVERAGE) combine
-	$(COVERAGE) report
+	$(COVERAGE) report --show-missing

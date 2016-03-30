@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>{% block title %}{% endblock %}</title>
+  {% block css %}{% endblock %}
+  {% block js_header %}{% endblock %}
 </head>
 <body>
   {% block header %}{% endblock %}
   {% block content %}{% endblock %}
   {% block footer %}{% endblock %}
+  {% block js_content %}{% endblock %}
 </body>
 </html>

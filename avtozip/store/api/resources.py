@@ -52,7 +52,7 @@ class ProductCategoryResource(StoreBaseResource):
 
 
 class ProductResource(StoreBaseResource):
-    """Resource API for any product in the store."""
+    """Resource API for product in the store."""
 
     category = fields.ForeignKey('store.api.resources.ProductCategoryResource', 'category')
     store = fields.ForeignKey('store.api.resources.StoreResource', 'store')

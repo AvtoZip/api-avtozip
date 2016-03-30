@@ -56,7 +56,7 @@ class ProductCategory(models.Model):
 
 
 class Product(models.Model):
-    """Model for any product in the store."""
+    """Model for product in the store."""
 
     article = models.CharField(max_length=50)
     name = models.CharField(max_length=200)
@@ -64,6 +64,7 @@ class Product(models.Model):
     cost = models.DecimalField(max_digits=10, decimal_places=2)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     count = models.DecimalField(max_digits=10, decimal_places=2)
+    is_active = models.BooleanField(default=False)
     store = models.ForeignKey(Store)
 
     def __str__(self):

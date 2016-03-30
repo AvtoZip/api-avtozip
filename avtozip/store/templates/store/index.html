@@ -2,7 +2,41 @@
 
 {% block title %}AvtoZip Store{% endblock %}
 
+{% block css %}
+  {{ block.super }}
+  <link rel="stylesheet" type="text/css" href="{% static 'store/css/main.css' %}" />
+{% endblock %}
+
 {% block content %}
   <h1>AvtoZip Store placeholder</h1>
   <p>ProductList placeholder</p>
+  <form method="post">
+    {% csrf_token %}
+    {{ formset.management_form }}
+    <div class="div-table">
+      {% for form in formset %}
+      {% if forloop.first %}
+      <div class="div-table-row-header">
+        {% for field in form.visible_fields %}
+        <div class="div-table-col">{{ field.label|capfirst }}</div>
+        {% endfor %}
+      </div>
+      {% endif %}
+      {{ form.id }}
+      <div class="div-table-row">
+        {% for field in form.visible_fields %}
+        <div class="div-table-col">
+          {{ field.errors.as_ul }}
+          {{ field }}
+        </div>
+        {% endfor %}
+      </div>
+      {% endfor %}
+      <div class="div-table-row">
+        <div class="div-table-col">
+          <input type="submit" value="submit" />
+        </div>
+      </div>
+    </div>
+  </form>
 {% endblock %}

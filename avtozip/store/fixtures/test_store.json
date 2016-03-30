@@ -75,7 +75,8 @@
     "cost": "1.00",
     "price": "1.00",
     "count": "1.00",
-    "store": 1
+    "store": 1,
+    "is_active": false
   }
 },
 {
@@ -88,7 +89,8 @@
     "cost": "2.00",
     "price": "2.00",
     "count": "2.00",
-    "store": 2
+    "store": 2,
+    "is_active": true
   }
 },
 {

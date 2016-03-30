@@ -63,6 +63,7 @@ target/
 
 # Custom IGNORES
 .idea/
+avtozip/static/
 
 # Settings
-/avtozip/avtozip/settings/local.py
+avtozip/avtozip/settings/local.py

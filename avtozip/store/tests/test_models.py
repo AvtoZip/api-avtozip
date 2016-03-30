@@ -2,7 +2,7 @@
 
 from autofixture import AutoFixture
 
-from django.test import TestCase
+from django import test
 
 from ..models import (
     Product,
@@ -12,7 +12,7 @@ from ..models import (
 )
 
 
-class ModelRepresentationTestCase(TestCase):
+class ModelRepresentationTestCase(test.TestCase):
     """Representation check for different models."""
 
     @classmethod

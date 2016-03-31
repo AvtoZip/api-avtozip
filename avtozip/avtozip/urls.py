@@ -3,24 +3,14 @@
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from tastypie.api import Api
-
-from store.api.resources import (
-    ProductCategoryResource,
-    ProductResource,
-)
+from store.api.urls import store_api
 
 from . import views
-
-
-v1_api = Api(api_name='v1')
-v1_api.register(ProductResource())
-v1_api.register(ProductCategoryResource())
 
 
 urlpatterns = [
     url(r'^$', views.dashboard_view, name='index'),
     url(r'^admin/', admin.site.urls),
-    url(r'^api/', include(v1_api.urls)),
+    url(r'^api/', include(store_api.urls)),
     url(r'^store/', include('store.urls', namespace='store')),
 ]

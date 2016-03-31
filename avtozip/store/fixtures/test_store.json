@@ -1,5 +1,47 @@
 [
 {
+  "model": "store.storeaddress",
+  "pk": 1,
+  "fields": {
+    "line1": "Line1_1",
+    "line2": "Line2_1",
+    "street": "Street_1",
+    "city": "City_1",
+    "state": "State_1",
+    "zip": "Zip_1",
+    "country": "Country_1"
+  }
+},
+{
+  "model": "store.storeaddress",
+  "pk": 2,
+  "fields": {
+    "line1": "Line1_2",
+    "line2": "Line2_2",
+    "street": "Street_2",
+    "city": "City_2",
+    "state": "State_2",
+    "zip": "Zip_2",
+    "country": "Country_2"
+  }
+},
+{
+  "model": "store.store",
+  "pk": 1,
+  "fields": {
+    "name": "Store_1",
+    "address": 1
+  }
+},
+{
+  "model": "store.store",
+  "pk": 2,
+  "fields": {
+    "name": "Store_2",
+    "address": 2
+  }
+},
+{
   "model": "store.productcategory",
   "pk": 1,
   "fields": {
@@ -32,7 +74,8 @@
     "category": 2,
     "cost": "1.00",
     "price": "1.00",
-    "count": "1.00"
+    "count": "1.00",
+    "store": 1
   }
 },
 {
@@ -44,7 +87,8 @@
     "category": 3,
     "cost": "2.00",
     "price": "2.00",
-    "count": "2.00"
+    "count": "2.00",
+    "store": 2
   }
 },
 {

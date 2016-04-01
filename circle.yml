@@ -15,4 +15,6 @@ dependencies:
 test:
   override:
     - make test
+  post:
     - codecov --token=f78171d5-9f65-42b1-8967-2501724c89ae
+    - COVERALLS_REPO_TOKEN=bn2H57C5PkRsEF6JKHQidjxMQLsMwlGzO coveralls

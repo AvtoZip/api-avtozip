@@ -1,14 +1,15 @@
 """Testing module for views of AvtoZip project."""
 
-from django.template.exceptions import TemplateDoesNotExist
-from django.test import TestCase
+from django import test
+from django.core.urlresolvers import reverse
 
-from ..views import dashboard_view
+from tastypie import http
 
 
-class DashboardViewTestCase(TestCase):
+class DashboardViewTestCase(test.TestCase):
     """Dashboard page tests of AvtoZip project."""
 
-    def test_direct_access(self):
-        """Test direct access of the view."""
-        self.assertRaises(TemplateDoesNotExist, *(dashboard_view, self.client.request))
+    def test_index_page(self):
+        """Test index page of AvtoZip project."""
+        response = self.client.get(reverse('index'))
+        self.assertEqual(response.status_code, http.HttpResponse.status_code)

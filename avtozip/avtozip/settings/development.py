@@ -16,7 +16,11 @@ ALLOWED_HOSTS = []
 # Django TastyPie settings
 TASTYPIE_DEFAULT_FORMATS = ['json']
 
+# Nose configuration
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
 # Additional applications
 INSTALLED_APPS += [
     'debug_toolbar',
+    'django_nose',
 ]

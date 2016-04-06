@@ -29,7 +29,6 @@ SERVER_PORT ?= 8012
 # Other settings
 DJANGO_SERVER = runserver
 DJANGO_SHELL = shell_plus
-TEST_ARGS ?= avtozip
 
 all: install build
 
@@ -44,7 +43,7 @@ devserver: clean
 	COMMAND="$(DJANGO_SERVER) $(SERVER_HOST):$(SERVER_PORT)" $(MAKE) manage
 
 fasttest:
-	REUSE_DB=1 $(MAKE) test
+	TEST_ARGS="$(TEST_ARGS) --keepdb" $(MAKE) test
 
 install: install-github-key install-py
 

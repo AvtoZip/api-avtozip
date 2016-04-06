@@ -30,13 +30,14 @@ SERVER_PORT ?= 8012
 DJANGO_SERVER = runserver
 DJANGO_SHELL = shell_plus
 TEST_ARGS ?= avtozip
+TEST_PROCESSES ?= 4
 
 all: install build
 
 build: migrate
 
 clean:
-ifeq ($(CIRCLECI),)
+ifeq ($(CIRCLECI),1)
 	find ./$(PROJECT) $(ENV) \( -name "*.pyc" -o -type d -empty \) -exec rm -rf {} +
 endif
 
@@ -44,7 +45,7 @@ devserver: clean
 	COMMAND="$(DJANGO_SERVER) $(SERVER_HOST):$(SERVER_PORT)" $(MAKE) manage
 
 fasttest:
-	REUSE_DB=1 $(MAKE) test
+	TEST_ARGS="$(TEST_ARGS) --keepdb --parallel $(TEST_PROCESSES)" $(MAKE) test
 
 install: install-github-key install-py
 
@@ -52,12 +53,7 @@ install-github-key:
 	ssh-keygen -H -F github.com > /dev/null || ssh-keyscan -H github.com >> ~/.ssh/known_hosts
 
 install-py:
-ifeq ($(CIRCLECI),)
-	[ ! -d "$(ENV)/" ] && virtualenv $(ENV)/ || :
-	$(ENV)/bin/pip install $(REQUIREMENTS)
-else
 	pip install $(REQUIREMENTS)
-endif
 
 lint:
 ifeq ($(LEVEL),development)
@@ -77,5 +73,7 @@ shell:
 	COMMAND=$(DJANGO_SHELL) $(MAKE) manage
 
 test: clean lint
-	$(COVERAGE) run --branch ./$(PROJECT)/manage.py test $(TEST_ARGS)
+	$(COVERAGE) erase
+	$(COVERAGE) run $(PROJECT)/manage.py test $(TEST_ARGS)
+	$(COVERAGE) combine
 	$(COVERAGE) report

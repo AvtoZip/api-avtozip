@@ -21,3 +21,6 @@ INSTALLED_APPS += [
     'debug_toolbar',
     'rosetta',
 ]
+
+# Proxy settings
+PROXY_TECDOC_URL = 'http://localhost:8013/api/tecdoc_v1'

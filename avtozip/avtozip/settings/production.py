@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'django_extensions',
+    'httpproxy',
     'tastypie',
 
     'store',
@@ -118,3 +119,6 @@ DEFAULT_SKIPPED_LOCALES = ['en']
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# Proxy settings
+PROXY_TECDOC_URL = 'http://tecdoc.avtozip.ru/api/tecdoc_v1'

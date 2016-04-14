@@ -1,5 +1,6 @@
 dj-database-url==0.4.0
 Django==1.9.4
 django-extensions==1.6.1
+django-http-proxy==0.4.3
 django-tastypie==0.13.3
 psycopg2==2.6.1

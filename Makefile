@@ -1,5 +1,5 @@
-.PHONY: build clean devserver fasttest install install-py \
-		lint manage messages migrate server shell test
+.PHONY: build checkmessages clean devserver fasttest install install-py lint manage messages migrate server \
+		shell test
 
 # Project settings
 LEVEL ?= development
@@ -35,6 +35,9 @@ TEST_PROCESSES ?= 4
 all: install build
 
 build: migrate
+
+checkmessages:
+	COMMAND="checkmessages --verbosity 3" $(MAKE) manage
 
 clean:
 ifeq ($(CIRCLECI),1)
@@ -76,7 +79,7 @@ server: clean lint
 shell:
 	COMMAND=$(DJANGO_SHELL) $(MAKE) manage
 
-test: clean lint
+test: clean lint checkmessages
 	$(COVERAGE) erase
 	$(COVERAGE) run $(PROJECT)/manage.py test $(TEST_ARGS)
 	$(COVERAGE) combine

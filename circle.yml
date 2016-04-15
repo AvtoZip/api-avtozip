@@ -13,6 +13,8 @@ dependencies:
     - make install
 
 test:
+  pre:
+    - make messages
   override:
     - make test
   post:

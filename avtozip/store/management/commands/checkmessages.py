@@ -37,6 +37,9 @@ class Command(BaseCommand):
                     untranslated = polib.pofile(filepath).untranslated_entries()
                     for entry in untranslated:
                         results[filepath].append('{1} # {0}'.format(entry.msgid, entry.linenum))
+                else:
+                    self.stdout.write('Locale folder does not exist: {0}'.format(filepath))
+                    sys.exit(1)
         if results:
             if options['verbosity'] > 0:
                 self.stdout.write('You have untranslated messages!')

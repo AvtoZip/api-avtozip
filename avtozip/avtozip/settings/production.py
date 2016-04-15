@@ -105,8 +105,9 @@ LANGUAGES = (
     ('ru', 'Russian'),
 )
 LOCALE_PATHS = (
-    os.path.join(BASE_DIR, 'locale'),
+    os.path.join(BASE_DIR, 'locales'),
 )
+DEFAULT_EXTRA_KEYWORDS = ['_u', '_ul']
 DEFAULT_SKIPPED_LOCALES = ['en']
 
 # Static files (CSS, JavaScript, Images)

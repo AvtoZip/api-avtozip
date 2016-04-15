@@ -64,7 +64,7 @@ manage:
 	cd $(PROJECT) && $(PYTHON) ./manage.py $(COMMAND)
 
 messages:
-	COMMAND="makemessages --locale en --locale ru -v 1 --extra-keyword '_ul' --extra-keyword '_u'" $(MAKE) manage
+	COMMAND="makemessages --locale en --locale ru -v 1" $(MAKE) manage
 	COMMAND="compilemessages --locale en --locale ru -v 1" $(MAKE) manage
 
 migrate:

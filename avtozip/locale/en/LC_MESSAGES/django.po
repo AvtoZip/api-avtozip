@@ -1,0 +1,98 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-04-15 11:13+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: store/models.py:10
+msgid "Line1"
+msgstr ""
+
+#: store/models.py:11
+msgid "Line2"
+msgstr ""
+
+#: store/models.py:12
+msgid "Street"
+msgstr ""
+
+#: store/models.py:13
+msgid "City"
+msgstr ""
+
+#: store/models.py:14
+msgid "State"
+msgstr ""
+
+#: store/models.py:15
+msgid "ZIP"
+msgstr ""
+
+#: store/models.py:16
+msgid "Country"
+msgstr ""
+
+#: store/models.py:33 store/models.py:49 store/models.py:63
+msgid "Name"
+msgstr ""
+
+#: store/models.py:62
+msgid "Article"
+msgstr ""
+
+#: store/models.py:65
+msgid "Cost"
+msgstr ""
+
+#: store/models.py:66
+msgid "Price"
+msgstr ""
+
+#: store/models.py:67
+msgid "Count"
+msgstr ""
+
+#: store/templates/store/index.html:7
+msgid "AvtoZip Store placeholder"
+msgstr ""
+
+#: store/templates/store/index.html:8
+msgid "ProductList placeholder"
+msgstr ""
+
+#: templates/footer.html:3
+msgid "Footer placeholder"
+msgstr ""
+
+#: templates/header.html:4
+msgid "Header placeholder"
+msgstr ""
+
+#: templates/header.html:5
+msgid "Language"
+msgstr ""
+
+#: templates/index.html:5
+msgid "AvtoZip DashBoard placeholder"
+msgstr ""
+
+#: templates/index.html:7
+msgid "Store"
+msgstr ""
+
+#: templates/main.html:4
+msgid "AvtoZip Dashboard"
+msgstr ""

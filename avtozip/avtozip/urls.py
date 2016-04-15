@@ -13,4 +13,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include(store_api.urls)),
     url(r'^store/', include('store.urls', namespace='store')),
+    url(r'^rosetta/', include('rosetta.urls')),
+    url(r'^i18n/', include('django.conf.urls.i18n')),
 ]

@@ -12,7 +12,8 @@ def index_view(request):
         formset = ProductFormSet(request.POST)
         if formset.is_valid():
             formset.save()
-    else:
+
+    if request.method != 'POST' or formset.is_valid():
         res = ProductResource()
         request_bundle = res.build_bundle(request=request)
         formset = ProductFormSet(queryset=res.obj_get_list(request_bundle))

@@ -63,6 +63,7 @@ target/
 
 # Custom IGNORES
 .idea/
+.DS_Store
 avtozip/static/
 
 # Settings

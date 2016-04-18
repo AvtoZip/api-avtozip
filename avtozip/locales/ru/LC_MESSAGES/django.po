@@ -1,0 +1,106 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-04-18 13:38+0000\n"
+"PO-Revision-Date: 2016-04-14 23:42+0000\n"
+"Last-Translator: b'  <>'\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Translated-Using: django-rosetta 0.7.11\n"
+
+#: store/models.py:10
+msgid "Line1"
+msgstr "Дом, квартира"
+
+#: store/models.py:11
+msgid "Line2"
+msgstr "Корпус, этаж"
+
+#: store/models.py:12
+msgid "Street"
+msgstr "Улица"
+
+#: store/models.py:13
+msgid "City"
+msgstr "Город"
+
+#: store/models.py:14
+msgid "State"
+msgstr "Штат (Область)"
+
+#: store/models.py:15
+msgid "ZIP"
+msgstr "Индекс"
+
+#: store/models.py:16
+msgid "Country"
+msgstr "Страна"
+
+#: store/models.py:33 store/models.py:49 store/models.py:63
+msgid "Name"
+msgstr "Наименование"
+
+#: store/models.py:62
+msgid "Article"
+msgstr "Артикль"
+
+#: store/models.py:65
+msgid "Cost"
+msgstr "Стоимость"
+
+#: store/models.py:66
+msgid "Price"
+msgstr "Цена"
+
+#: store/models.py:67
+msgid "Count"
+msgstr "Количество"
+
+#: store/models.py:68
+msgid "Active"
+msgstr "Активный"
+
+#: store/templates/store/index.html:12
+msgid "AvtoZip Store placeholder"
+msgstr "Место для интернет-магазина AvtoZip"
+
+#: store/templates/store/index.html:13
+msgid "ProductList placeholder"
+msgstr "Место для списка продуктов"
+
+#: templates/footer.html:3
+msgid "Footer placeholder"
+msgstr "Место для \"ПОДВАЛА\""
+
+#: templates/header.html:4
+msgid "Header placeholder"
+msgstr "Место для \"ШАПКИ\""
+
+#: templates/header.html:5
+msgid "Language"
+msgstr "Язык"
+
+#: templates/index.html:5
+msgid "AvtoZip DashBoard placeholder"
+msgstr "Место для панели AvtoZip"
+
+#: templates/index.html:7
+msgid "Store"
+msgstr "Интернет-магазин"
+
+#: templates/main.html:4
+msgid "AvtoZip Dashboard"
+msgstr "Панель AvtoZip"

@@ -19,4 +19,5 @@ TASTYPIE_DEFAULT_FORMATS = ['json']
 # Additional applications
 INSTALLED_APPS += [
     'debug_toolbar',
+    'rosetta',
 ]

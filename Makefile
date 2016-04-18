@@ -1,5 +1,5 @@
 .PHONY: build clean devserver fasttest install install-py \
-		lint manage migrate server shell test
+		lint manage messages migrate server shell test
 
 # Project settings
 LEVEL ?= development
@@ -29,7 +29,7 @@ SERVER_PORT ?= 8012
 # Other settings
 DJANGO_SERVER = runserver
 DJANGO_SHELL = shell_plus
-TEST_ARGS ?= avtozip
+TEST_ARGS ?= $(PROJECT)
 TEST_PROCESSES ?= 4
 
 all: install build
@@ -61,7 +61,11 @@ ifeq ($(LEVEL),development)
 endif
 
 manage:
-	$(PYTHON) ./$(PROJECT)/manage.py $(COMMAND)
+	cd $(PROJECT) && $(PYTHON) ./manage.py $(COMMAND)
+
+messages:
+	COMMAND="makemessages --locale en --locale ru -v 1" $(MAKE) manage
+	COMMAND="compilemessages --locale en --locale ru -v 1" $(MAKE) manage
 
 migrate:
 	COMMAND="migrate --noinput" $(MAKE) manage

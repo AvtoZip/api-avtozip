@@ -1,8 +1,9 @@
 {% extends "main.html" %}
+{% load i18n %}
 
 {% block content %}
-  <h1>AvtoZip DashBoard placeholder</h1>
+  <h1>{% trans 'AvtoZip DashBoard placeholder' %}</h1>
   <li>
-    <ul><a href="{% url 'store:index' %}">Store</a></ul>
+    <ul><a href="{% url 'store:index' %}">{% trans 'Store' %}</a></ul>
   </li>
 {% endblock %}

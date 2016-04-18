@@ -37,6 +37,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 ROOT_URLCONF = 'avtozip.urls'
 TEMPLATES = [
@@ -102,6 +103,15 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
+LANGUAGES = (
+    ('en', 'English'),
+    ('ru', 'Russian'),
+)
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locales'),
+)
+DEFAULT_EXTRA_KEYWORDS = ['_u', '_ul']
+DEFAULT_SKIPPED_LOCALES = ['en']
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/

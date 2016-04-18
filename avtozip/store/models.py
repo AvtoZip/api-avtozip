@@ -1,18 +1,19 @@
 """Store application models."""
 
 from django.db import models
+from django.utils.translation import ugettext_lazy as _ul
 
 
 class StoreAddress(models.Model):
     """Model for address of the store."""
 
-    line1 = models.CharField(max_length=100)
-    line2 = models.CharField(max_length=100, null=True, blank=True)
-    street = models.CharField(max_length=40)
-    city = models.CharField(max_length=40)
-    state = models.CharField(max_length=40, null=True, blank=True)
-    zip = models.CharField(max_length=20)
-    country = models.CharField(max_length=20)
+    line1 = models.CharField(max_length=100, verbose_name=_ul('Line1'))
+    line2 = models.CharField(max_length=100, null=True, blank=True, verbose_name=_ul('Line2'))
+    street = models.CharField(max_length=40, verbose_name=_ul('Street'))
+    city = models.CharField(max_length=40, verbose_name=_ul('City'))
+    state = models.CharField(max_length=40, null=True, blank=True, verbose_name=_ul('State'))
+    zip = models.CharField(max_length=20, verbose_name=_ul('ZIP'))
+    country = models.CharField(max_length=20, verbose_name=_ul('Country'))
 
     def __str__(self):
         """String representation of store address model."""
@@ -29,7 +30,7 @@ class StoreAddress(models.Model):
 class Store(models.Model):
     """Model for store."""
 
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, verbose_name=_ul('Name'))
     address = models.ForeignKey('store.StoreAddress')
 
     def __str__(self):
@@ -45,7 +46,7 @@ class ProductCategory(models.Model):
     class Meta:
         verbose_name_plural = 'ProductCategories'
 
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, verbose_name=_ul('Name'))
     parent = models.ForeignKey('store.ProductCategory', null=True, blank=True)
 
     def __str__(self):
@@ -58,13 +59,13 @@ class ProductCategory(models.Model):
 class Product(models.Model):
     """Model for product in the store."""
 
-    article = models.CharField(max_length=50)
-    name = models.CharField(max_length=200)
+    article = models.CharField(max_length=50, verbose_name=_ul('Article'))
+    name = models.CharField(max_length=200, verbose_name=_ul('Name'))
     category = models.ForeignKey(ProductCategory)
-    cost = models.DecimalField(max_digits=10, decimal_places=2)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
-    count = models.DecimalField(max_digits=10, decimal_places=2)
-    is_active = models.BooleanField(default=False)
+    cost = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_ul('Cost'))
+    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_ul('Price'))
+    count = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_ul('Count'))
+    is_active = models.BooleanField(default=False, verbose_name=_ul('Active'))
     store = models.ForeignKey(Store)
 
     def __str__(self):

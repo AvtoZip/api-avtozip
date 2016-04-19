@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-22 11:44+0000\n"
+"POT-Creation-Date: 2016-04-24 09:54+0000\n"
 "PO-Revision-Date: 2016-04-14 23:42+0000\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,7 +67,11 @@ msgstr "Наименование"
 
 #: store/models.py:64
 msgid "Article"
-msgstr "Артикль"
+msgstr "Артикул"
+
+#: store/models.py:66
+msgid "Category"
+msgstr "Категория"
 
 #: store/models.py:67
 msgid "Cost"
@@ -85,6 +89,10 @@ msgstr "Количество"
 msgid "Active"
 msgstr "Активный"
 
+#: store/models.py:71 templates/index.html.py:7
+msgid "Store"
+msgstr "Магазин"
+
 #: store/templates/store/index.html:12
 msgid "AvtoZip Store placeholder"
 msgstr "Место для интернет-магазина AvtoZip"
@@ -92,6 +100,10 @@ msgstr "Место для интернет-магазина AvtoZip"
 #: store/templates/store/index.html:13
 msgid "ProductList placeholder"
 msgstr "Место для списка продуктов"
+
+#: store/templates/store/index.html:38
+msgid "Add"
+msgstr "Добавить"
 
 #: templates/footer.html:3
 msgid "Footer placeholder"
@@ -108,10 +120,6 @@ msgstr "Язык"
 #: templates/index.html:5
 msgid "AvtoZip DashBoard placeholder"
 msgstr "Место для панели AvtoZip"
-
-#: templates/index.html:7
-msgid "Store"
-msgstr "Интернет-магазин"
 
 #: templates/main.html:4
 msgid "AvtoZip Dashboard"

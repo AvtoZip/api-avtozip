@@ -63,12 +63,12 @@ class Product(models.Model):
 
     article = custom_fields.ArticleField(verbose_name=_ul('Article'))
     name = models.CharField(max_length=200, verbose_name=_ul('Name'))
-    category = models.ForeignKey(ProductCategory)
+    category = models.ForeignKey(ProductCategory, verbose_name=_ul('Category'))
     cost = custom_fields.PositiveDecimalField(verbose_name=_ul('Cost'))
     price = custom_fields.PositiveDecimalField(verbose_name=_ul('Price'))
     count = custom_fields.PositiveDecimalField(verbose_name=_ul('Count'))
     is_active = models.BooleanField(default=False, verbose_name=_ul('Active'))
-    store = models.ForeignKey(Store)
+    store = models.ForeignKey(Store, verbose_name=_ul('Store'))
 
     def __str__(self):
         """String representation of product model."""

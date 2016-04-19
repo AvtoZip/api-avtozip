@@ -5,27 +5,27 @@ from django import forms
 from .models import Product
 
 
-class ProductForm(forms.ModelForm):
-    """Form for product in the store."""
+class BaseModelForm(forms.ModelForm):
+    """Base model form with common logic."""
+
+    def __init__(self, *args, **kwargs):
+        """Base constructor to initialize common attributes."""
+        for field_name, input in self.widgets.items():
+            input.attrs['placeholder'] = self.model._meta.get_field(field_name).verbose_name
+        super(BaseModelForm, self).__init__(*args, **kwargs)
+
+
+class ProductForm(BaseModelForm):
+    """Form for product in the storeBaseModelForm."""
 
     model = Product
     fields = ('article', 'name', 'category', 'price', 'cost', 'count', 'store', 'is_active')
     widgets = {
-        'article': forms.TextInput(
-            attrs={'placeholder': 'Article'},
-        ),
-        'name': forms.TextInput(
-            attrs={'placeholder': 'Name'},
-        ),
-        'price': forms.NumberInput(
-            attrs={'placeholder': 'Price'},
-        ),
-        'cost': forms.NumberInput(
-            attrs={'placeholder': 'Cost'},
-        ),
-        'count': forms.NumberInput(
-            attrs={'placeholder': 'Count'},
-        ),
+        'article': forms.TextInput(),
+        'name': forms.TextInput(),
+        'price': forms.NumberInput(),
+        'cost': forms.NumberInput(),
+        'count': forms.NumberInput(),
     }
 
 # Formset for products based on `ProductForm` class

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-22 11:44+0000\n"
+"POT-Creation-Date: 2016-04-24 09:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,6 +65,10 @@ msgstr ""
 msgid "Article"
 msgstr ""
 
+#: store/models.py:66
+msgid "Category"
+msgstr ""
+
 #: store/models.py:67
 msgid "Cost"
 msgstr ""
@@ -81,12 +85,20 @@ msgstr ""
 msgid "Active"
 msgstr ""
 
+#: store/models.py:71 templates/index.html.py:7
+msgid "Store"
+msgstr ""
+
 #: store/templates/store/index.html:12
 msgid "AvtoZip Store placeholder"
 msgstr ""
 
 #: store/templates/store/index.html:13
 msgid "ProductList placeholder"
+msgstr ""
+
+#: store/templates/store/index.html:38
+msgid "Add"
 msgstr ""
 
 #: templates/footer.html:3
@@ -103,10 +115,6 @@ msgstr ""
 
 #: templates/index.html:5
 msgid "AvtoZip DashBoard placeholder"
-msgstr ""
-
-#: templates/index.html:7
-msgid "Store"
 msgstr ""
 
 #: templates/main.html:4

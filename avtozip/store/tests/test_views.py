@@ -1,12 +1,11 @@
 """Testing module for views of Store application."""
 
-from autofixture import AutoFixture
-
 from django import test
 from django.core.urlresolvers import reverse
 
 from tastypie import http
 
+from ..autofixtures import ProductAutoFixture
 from ..models import Product
 
 
@@ -16,7 +15,7 @@ class ProductListViewTestCase(test.TestCase):
     @classmethod
     def setUpTestData(cls):  # NOQA
         """Class based setup."""
-        cls.product = AutoFixture(Product, generate_fk=True).create_one()
+        cls.product = ProductAutoFixture(Product, generate_fk=True).create_one()
 
     def test_get(self):
         """Test GET method."""
@@ -51,7 +50,7 @@ class ProductListViewTestCase(test.TestCase):
 
     def test_post_changed(self):
         """Test POST with changes."""
-        new_product = AutoFixture(Product, generate_fk=True).create_one(commit=False)
+        new_product = ProductAutoFixture(Product, generate_fk=True).create_one(commit=False)
         self.assertEqual(Product.objects.count(), 1)
         data = {
             'form-0-id': self.product.pk,
@@ -82,7 +81,7 @@ class ProductListViewTestCase(test.TestCase):
 
     def test_post_new(self):
         """Test POST with new object creation."""
-        new_product = AutoFixture(Product, generate_fk=True).create_one(commit=False)
+        new_product = ProductAutoFixture(Product, generate_fk=True).create_one(commit=False)
         self.assertEqual(Product.objects.count(), 1)
         data = {
             'form-0-id': self.product.pk,
@@ -114,7 +113,7 @@ class ProductListViewTestCase(test.TestCase):
 
     def test_post_invalid(self):
         """Test POST with invalid data."""
-        new_product = AutoFixture(Product, generate_fk=True).create_one(commit=False)
+        new_product = ProductAutoFixture(Product, generate_fk=True).create_one(commit=False)
         self.assertEqual(Product.objects.count(), 1)
         data = {
             'form-0-id': self.product.pk,

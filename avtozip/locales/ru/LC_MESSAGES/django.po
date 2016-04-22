@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-18 13:38+0000\n"
+"POT-Creation-Date: 2016-04-22 11:44+0000\n"
 "PO-Revision-Date: 2016-04-14 23:42+0000\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,55 +21,67 @@ msgstr ""
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 "X-Translated-Using: django-rosetta 0.7.11\n"
 
-#: store/models.py:10
+#: store/fields.py:15
+msgid "Article string"
+msgstr "Строка артикля"
+
+#: store/fields.py:32
+msgid "Should contain only letters, digits, dashes and whitespaces"
+msgstr "Допустимы только буквы, цифры, тире и пробелы"
+
+#: store/fields.py:42
+msgid "Positive decimal number"
+msgstr "Положительное дробное число"
+
+#: store/models.py:12
 msgid "Line1"
 msgstr "Дом, квартира"
 
-#: store/models.py:11
+#: store/models.py:13
 msgid "Line2"
 msgstr "Корпус, этаж"
 
-#: store/models.py:12
+#: store/models.py:14
 msgid "Street"
 msgstr "Улица"
 
-#: store/models.py:13
+#: store/models.py:15
 msgid "City"
 msgstr "Город"
 
-#: store/models.py:14
+#: store/models.py:16
 msgid "State"
 msgstr "Штат (Область)"
 
-#: store/models.py:15
+#: store/models.py:17
 msgid "ZIP"
 msgstr "Индекс"
 
-#: store/models.py:16
+#: store/models.py:18
 msgid "Country"
 msgstr "Страна"
 
-#: store/models.py:33 store/models.py:49 store/models.py:63
+#: store/models.py:35 store/models.py:51 store/models.py:65
 msgid "Name"
 msgstr "Наименование"
 
-#: store/models.py:62
+#: store/models.py:64
 msgid "Article"
 msgstr "Артикль"
 
-#: store/models.py:65
+#: store/models.py:67
 msgid "Cost"
 msgstr "Стоимость"
 
-#: store/models.py:66
+#: store/models.py:68
 msgid "Price"
 msgstr "Цена"
 
-#: store/models.py:67
+#: store/models.py:69
 msgid "Count"
 msgstr "Количество"
 
-#: store/models.py:68
+#: store/models.py:70
 msgid "Active"
 msgstr "Активный"
 
@@ -85,11 +97,11 @@ msgstr "Место для списка продуктов"
 msgid "Footer placeholder"
 msgstr "Место для \"ПОДВАЛА\""
 
-#: templates/header.html:4
+#: templates/header.html:5
 msgid "Header placeholder"
 msgstr "Место для \"ШАПКИ\""
 
-#: templates/header.html:5
+#: templates/header.html:10
 msgid "Language"
 msgstr "Язык"
 

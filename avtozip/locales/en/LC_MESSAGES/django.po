@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-18 13:38+0000\n"
+"POT-Creation-Date: 2016-04-22 11:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,55 +17,67 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: store/models.py:10
-msgid "Line1"
+#: store/fields.py:15
+msgid "Article string"
 msgstr ""
 
-#: store/models.py:11
-msgid "Line2"
+#: store/fields.py:32
+msgid "Should contain only letters, digits, dashes and whitespaces"
+msgstr ""
+
+#: store/fields.py:42
+msgid "Positive decimal number"
 msgstr ""
 
 #: store/models.py:12
-msgid "Street"
+msgid "Line1"
 msgstr ""
 
 #: store/models.py:13
-msgid "City"
+msgid "Line2"
 msgstr ""
 
 #: store/models.py:14
-msgid "State"
+msgid "Street"
 msgstr ""
 
 #: store/models.py:15
-msgid "ZIP"
+msgid "City"
 msgstr ""
 
 #: store/models.py:16
+msgid "State"
+msgstr ""
+
+#: store/models.py:17
+msgid "ZIP"
+msgstr ""
+
+#: store/models.py:18
 msgid "Country"
 msgstr ""
 
-#: store/models.py:33 store/models.py:49 store/models.py:63
+#: store/models.py:35 store/models.py:51 store/models.py:65
 msgid "Name"
 msgstr ""
 
-#: store/models.py:62
+#: store/models.py:64
 msgid "Article"
 msgstr ""
 
-#: store/models.py:65
+#: store/models.py:67
 msgid "Cost"
 msgstr ""
 
-#: store/models.py:66
+#: store/models.py:68
 msgid "Price"
 msgstr ""
 
-#: store/models.py:67
+#: store/models.py:69
 msgid "Count"
 msgstr ""
 
-#: store/models.py:68
+#: store/models.py:70
 msgid "Active"
 msgstr ""
 
@@ -81,11 +93,11 @@ msgstr ""
 msgid "Footer placeholder"
 msgstr ""
 
-#: templates/header.html:4
+#: templates/header.html:5
 msgid "Header placeholder"
 msgstr ""
 
-#: templates/header.html:5
+#: templates/header.html:10
 msgid "Language"
 msgstr ""
 

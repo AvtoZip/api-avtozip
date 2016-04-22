@@ -3,6 +3,8 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _ul
 
+from . import fields as custom_fields
+
 
 class StoreAddress(models.Model):
     """Model for address of the store."""
@@ -59,12 +61,12 @@ class ProductCategory(models.Model):
 class Product(models.Model):
     """Model for product in the store."""
 
-    article = models.CharField(max_length=50, verbose_name=_ul('Article'))
+    article = custom_fields.ArticleField(verbose_name=_ul('Article'))
     name = models.CharField(max_length=200, verbose_name=_ul('Name'))
     category = models.ForeignKey(ProductCategory)
-    cost = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_ul('Cost'))
-    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_ul('Price'))
-    count = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_ul('Count'))
+    cost = custom_fields.PositiveDecimalField(verbose_name=_ul('Cost'))
+    price = custom_fields.PositiveDecimalField(verbose_name=_ul('Price'))
+    count = custom_fields.PositiveDecimalField(verbose_name=_ul('Count'))
     is_active = models.BooleanField(default=False, verbose_name=_ul('Active'))
     store = models.ForeignKey(Store)
 

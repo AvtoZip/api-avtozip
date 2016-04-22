@@ -67,9 +67,6 @@ class ProductResource(StoreBaseResource):
 
     def build_filters(self, filters=None, ignore_bad_filters=False):
         """Build required filters. Expanded by filter `query`."""
-        if filters is None:
-            filters = {}
-
         orm_filters = super(ProductResource, self).build_filters(filters, ignore_bad_filters)
 
         # Append orm_filter `query`

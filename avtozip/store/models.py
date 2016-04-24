@@ -33,7 +33,7 @@ class Store(models.Model):
     """Model for store."""
 
     name = models.CharField(max_length=200, verbose_name=_ul('Name'))
-    address = models.ForeignKey('store.StoreAddress')
+    address = models.ForeignKey('store.StoreAddress', verbose_name=_ul('Address'))
 
     def __str__(self):
         """String representation of store model."""
@@ -49,7 +49,7 @@ class ProductCategory(models.Model):
         verbose_name_plural = 'ProductCategories'
 
     name = models.CharField(max_length=50, verbose_name=_ul('Name'))
-    parent = models.ForeignKey('store.ProductCategory', null=True, blank=True)
+    parent = models.ForeignKey('store.ProductCategory', null=True, blank=True, verbose_name=_ul('Category'))
 
     def __str__(self):
         """String representation of product category model."""
@@ -67,7 +67,7 @@ class Product(models.Model):
     cost = custom_fields.PositiveDecimalField(verbose_name=_ul('Cost'))
     price = custom_fields.PositiveDecimalField(verbose_name=_ul('Price'))
     count = custom_fields.PositiveDecimalField(verbose_name=_ul('Count'))
-    is_active = models.BooleanField(default=False, verbose_name=_ul('Active'))
+    is_active = models.BooleanField(default=True, verbose_name=_ul('Active'))
     store = models.ForeignKey(Store, verbose_name=_ul('Store'))
 
     def __str__(self):

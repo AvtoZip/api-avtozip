@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-24 09:54+0000\n"
+"POT-Creation-Date: 2016-04-24 20:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,12 +61,16 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: store/models.py:64
-msgid "Article"
+#: store/models.py:36
+msgid "Address"
 msgstr ""
 
-#: store/models.py:66
+#: store/models.py:52 store/models.py:66
 msgid "Category"
+msgstr ""
+
+#: store/models.py:64
+msgid "Article"
 msgstr ""
 
 #: store/models.py:67

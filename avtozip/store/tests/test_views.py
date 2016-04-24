@@ -33,6 +33,7 @@ class ProductListViewTestCase(test.TestCase):
             'form-0-price': self.product.price,
             'form-0-count': self.product.count,
             'form-0-store': self.product.store_id,
+            'form-0-is_active': self.product.is_active,
             'form-1-id': '',
             'form-1-article': '',
             'form-1-name': '',
@@ -41,6 +42,7 @@ class ProductListViewTestCase(test.TestCase):
             'form-1-price': '',
             'form-1-count': '',
             'form-1-store': '',
+            'form-1-is_active': 'on',
             'form-TOTAL_FORMS': '2',
             'form-INITIAL_FORMS': '1',
         }
@@ -61,6 +63,7 @@ class ProductListViewTestCase(test.TestCase):
             'form-0-price': new_product.price,
             'form-0-count': new_product.count,
             'form-0-store': new_product.store_id,
+            'form-0-is_active': new_product.is_active,
             'form-1-id': '',
             'form-1-article': '',
             'form-1-name': '',
@@ -69,6 +72,7 @@ class ProductListViewTestCase(test.TestCase):
             'form-1-price': '',
             'form-1-count': '',
             'form-1-store': '',
+            'form-1-is_active': 'on',
             'form-TOTAL_FORMS': '2',
             'form-INITIAL_FORMS': '1',
         }
@@ -92,6 +96,7 @@ class ProductListViewTestCase(test.TestCase):
             'form-0-price': self.product.price,
             'form-0-count': self.product.count,
             'form-0-store': self.product.store_id,
+            'form-0-is_active': self.product.is_active,
             'form-1-id': '',
             'form-1-article': new_product.article,
             'form-1-name': new_product.name,
@@ -100,6 +105,7 @@ class ProductListViewTestCase(test.TestCase):
             'form-1-price': new_product.price,
             'form-1-count': new_product.count,
             'form-1-store': new_product.store_id,
+            'form-1-is_active': new_product.is_active,
             'form-TOTAL_FORMS': '2',
             'form-INITIAL_FORMS': '1',
         }
@@ -124,6 +130,7 @@ class ProductListViewTestCase(test.TestCase):
             'form-0-price': new_product.price,
             'form-0-count': new_product.count,
             'form-0-store': new_product.store_id,
+            'form-0-is_active': new_product.is_active,
             'form-1-id': '',
             'form-1-article': '',
             'form-1-name': '',
@@ -132,6 +139,7 @@ class ProductListViewTestCase(test.TestCase):
             'form-1-price': '',
             'form-1-count': '',
             'form-1-store': '',
+            'form-1-is_active': 'on',
             'form-TOTAL_FORMS': '2',
             'form-INITIAL_FORMS': '1',
         }

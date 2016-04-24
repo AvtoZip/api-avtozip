@@ -5,6 +5,8 @@ from __future__ import unicode_literals
 from django.db import migrations, models
 import django.db.models.deletion
 
+from store import fields as custom_fields
+
 
 class Migration(migrations.Migration):
 
@@ -18,20 +20,21 @@ class Migration(migrations.Migration):
             name='Product',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('article', models.CharField(max_length=50)),
-                ('name', models.CharField(max_length=200)),
-                ('cost', models.DecimalField(decimal_places=2, max_digits=10)),
-                ('price', models.DecimalField(decimal_places=2, max_digits=10)),
-                ('count', models.DecimalField(decimal_places=2, max_digits=10)),
-                ('is_active', models.BooleanField(default=False)),
+                ('article', custom_fields.ArticleField(max_length=50, verbose_name='Article')),
+                ('name', models.CharField(max_length=200, verbose_name='Name')),
+                ('cost', custom_fields.PositiveDecimalField(decimal_places=2, max_digits=10, verbose_name='Cost')),
+                ('price', custom_fields.PositiveDecimalField(decimal_places=2, max_digits=10, verbose_name='Price')),
+                ('count', custom_fields.PositiveDecimalField(decimal_places=2, max_digits=10, verbose_name='Count')),
+                ('is_active', models.BooleanField(default=True, verbose_name='Active')),
             ],
         ),
         migrations.CreateModel(
             name='ProductCategory',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=50)),
-                ('parent', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='store.ProductCategory')),
+                ('name', models.CharField(max_length=50, verbose_name='Name')),
+                ('parent', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE,
+                                             to='store.ProductCategory', verbose_name='Category')),
             ],
             options={
                 'verbose_name_plural': 'ProductCategories',
@@ -41,35 +44,38 @@ class Migration(migrations.Migration):
             name='Store',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=200)),
+                ('name', models.CharField(max_length=200, verbose_name='Name')),
             ],
         ),
         migrations.CreateModel(
             name='StoreAddress',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('line1', models.CharField(max_length=100)),
-                ('line2', models.CharField(blank=True, max_length=100, null=True)),
-                ('street', models.CharField(max_length=40)),
-                ('city', models.CharField(max_length=40)),
-                ('state', models.CharField(blank=True, max_length=40, null=True)),
-                ('zip', models.CharField(max_length=20)),
-                ('country', models.CharField(max_length=20)),
+                ('line1', models.CharField(max_length=100, verbose_name='Line1')),
+                ('line2', models.CharField(blank=True, max_length=100, null=True, verbose_name='Line2')),
+                ('street', models.CharField(max_length=40, verbose_name='Street')),
+                ('city', models.CharField(max_length=40, verbose_name='City')),
+                ('state', models.CharField(blank=True, max_length=40, null=True, verbose_name='State')),
+                ('zip', models.CharField(max_length=20, verbose_name='ZIP')),
+                ('country', models.CharField(max_length=20, verbose_name='Country')),
             ],
         ),
         migrations.AddField(
             model_name='store',
             name='address',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='store.StoreAddress'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='store.StoreAddress',
+                                    verbose_name='Address'),
         ),
         migrations.AddField(
             model_name='product',
             name='category',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='store.ProductCategory'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='store.ProductCategory',
+                                    verbose_name='Category'),
         ),
         migrations.AddField(
             model_name='product',
             name='store',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='store.Store'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='store.Store',
+                                    verbose_name='Store'),
         ),
     ]

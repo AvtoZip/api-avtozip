@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-24 09:54+0000\n"
+"POT-Creation-Date: 2016-04-24 20:44+0000\n"
 "PO-Revision-Date: 2016-04-14 23:42+0000\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,13 +65,17 @@ msgstr "Страна"
 msgid "Name"
 msgstr "Наименование"
 
+#: store/models.py:36
+msgid "Address"
+msgstr "Адрес"
+
+#: store/models.py:52 store/models.py:66
+msgid "Category"
+msgstr "Категория"
+
 #: store/models.py:64
 msgid "Article"
 msgstr "Артикул"
-
-#: store/models.py:66
-msgid "Category"
-msgstr "Категория"
 
 #: store/models.py:67
 msgid "Cost"

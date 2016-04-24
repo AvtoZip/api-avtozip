@@ -1,6 +1,6 @@
 [
 {
-  "model": "store.storeaddress",
+  "model": "webstore.storeaddress",
   "pk": 1,
   "fields": {
     "line1": "Line1_1",
@@ -13,7 +13,7 @@
   }
 },
 {
-  "model": "store.storeaddress",
+  "model": "webstore.storeaddress",
   "pk": 2,
   "fields": {
     "line1": "Line1_2",
@@ -26,7 +26,7 @@
   }
 },
 {
-  "model": "store.store",
+  "model": "webstore.store",
   "pk": 1,
   "fields": {
     "name": "Store_1",
@@ -34,7 +34,7 @@
   }
 },
 {
-  "model": "store.store",
+  "model": "webstore.store",
   "pk": 2,
   "fields": {
     "name": "Store_2",
@@ -42,7 +42,7 @@
   }
 },
 {
-  "model": "store.productcategory",
+  "model": "webstore.productcategory",
   "pk": 1,
   "fields": {
     "name": "TestParent",
@@ -50,7 +50,7 @@
   }
 },
 {
-  "model": "store.productcategory",
+  "model": "webstore.productcategory",
   "pk": 2,
   "fields": {
     "name": "TestChild_1",
@@ -58,7 +58,7 @@
   }
 },
 {
-  "model": "store.productcategory",
+  "model": "webstore.productcategory",
   "pk": 3,
   "fields": {
     "name": "TestChild_2",
@@ -66,7 +66,7 @@
   }
 },
 {
-  "model": "store.product",
+  "model": "webstore.product",
   "pk": 1,
   "fields": {
     "article": "1",
@@ -80,7 +80,7 @@
   }
 },
 {
-  "model": "store.product",
+  "model": "webstore.product",
   "pk": 2,
   "fields": {
     "article": "2",

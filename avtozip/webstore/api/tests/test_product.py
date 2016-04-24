@@ -31,7 +31,7 @@ class ProductListTestCase(TestCase):
             model=Product, generate_fk=True, field_values={'name': 'fakeName'},
         ).create_one()
 
-        cls.url = reverse('api_dispatch_list', kwargs={'resource_name': 'product', 'api_name': 'store_v1'})
+        cls.url = reverse('api_dispatch_list', kwargs={'resource_name': 'product', 'api_name': 'webstore_v1'})
 
     def test_list(self):
         """Complete list of products."""

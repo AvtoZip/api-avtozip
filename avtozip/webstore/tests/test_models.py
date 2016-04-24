@@ -1,4 +1,4 @@
-"""Testing module for Store application models."""
+"""Testing module for WebStore application models."""
 
 from autofixture import AutoFixture
 

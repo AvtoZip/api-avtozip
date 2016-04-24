@@ -1,4 +1,4 @@
-"""Store application forms and formsets."""
+"""WebStore application forms and formsets."""
 
 from django import forms
 

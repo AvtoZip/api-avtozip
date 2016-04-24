@@ -1,4 +1,4 @@
-"""Store application views."""
+"""WebStore application views."""
 
 from django.shortcuts import render
 
@@ -7,7 +7,7 @@ from .forms import ProductFormSet
 
 
 def index_view(request):
-    """INDEX view of store application."""
+    """INDEX view of webstore application."""
     if request.method == 'POST':
         formset = ProductFormSet(request.POST)
         if formset.is_valid():
@@ -22,4 +22,4 @@ def index_view(request):
         'formset': formset,
     }
 
-    return render(request, 'store/index.html', context)
+    return render(request, 'webstore/index.html', context)

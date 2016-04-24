@@ -1,4 +1,4 @@
-"""Store application models."""
+"""WebStore application models."""
 
 from django.db import models
 from django.utils.translation import ugettext_lazy as _ul
@@ -33,7 +33,7 @@ class Store(models.Model):
     """Model for store."""
 
     name = models.CharField(max_length=200, verbose_name=_ul('Name'))
-    address = models.ForeignKey('store.StoreAddress', verbose_name=_ul('Address'))
+    address = models.ForeignKey('webstore.StoreAddress', verbose_name=_ul('Address'))
 
     def __str__(self):
         """String representation of store model."""
@@ -49,7 +49,7 @@ class ProductCategory(models.Model):
         verbose_name_plural = 'ProductCategories'
 
     name = models.CharField(max_length=50, verbose_name=_ul('Name'))
-    parent = models.ForeignKey('store.ProductCategory', null=True, blank=True, verbose_name=_ul('Category'))
+    parent = models.ForeignKey('webstore.ProductCategory', null=True, blank=True, verbose_name=_ul('Category'))
 
     def __str__(self):
         """String representation of product category model."""

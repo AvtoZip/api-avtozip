@@ -1,4 +1,4 @@
-"""Store application url configuration."""
+"""WebStore application url configuration."""
 
 from django.conf.urls import url
 

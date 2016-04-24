@@ -4,6 +4,6 @@ from django.apps import AppConfig
 
 
 class StoreConfig(AppConfig):
-    """Store application configuration."""
+    """WebStore application configuration."""
 
-    name = 'store'
+    name = 'webstore'

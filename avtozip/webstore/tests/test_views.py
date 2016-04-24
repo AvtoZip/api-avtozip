@@ -1,4 +1,4 @@
-"""Testing module for views of Store application."""
+"""Testing module for views of WebStore application."""
 
 from django import test
 from django.core.urlresolvers import reverse
@@ -10,7 +10,7 @@ from ..models import Product
 
 
 class ProductListViewTestCase(test.TestCase):
-    """Product List page of Store application."""
+    """Product List page of WebStore application."""
 
     @classmethod
     def setUpTestData(cls):  # NOQA
@@ -19,7 +19,7 @@ class ProductListViewTestCase(test.TestCase):
 
     def test_get(self):
         """Test GET method."""
-        response = self.client.get(reverse('store:index'))
+        response = self.client.get(reverse('webstore:index'))
         self.assertEqual(response.status_code, http.HttpResponse.status_code)
 
     def test_post_no_changes(self):
@@ -46,7 +46,7 @@ class ProductListViewTestCase(test.TestCase):
             'form-TOTAL_FORMS': '2',
             'form-INITIAL_FORMS': '1',
         }
-        response = self.client.post(reverse('store:index'), data)
+        response = self.client.post(reverse('webstore:index'), data)
         self.assertEqual(response.status_code, http.HttpResponse.status_code)
         self.assertEqual(Product.objects.count(), 1)
 
@@ -76,7 +76,7 @@ class ProductListViewTestCase(test.TestCase):
             'form-TOTAL_FORMS': '2',
             'form-INITIAL_FORMS': '1',
         }
-        response = self.client.post(reverse('store:index'), data)
+        response = self.client.post(reverse('webstore:index'), data)
         self.assertEqual(response.status_code, http.HttpResponse.status_code)
         self.assertEqual(Product.objects.count(), 1)
         new_product.id = self.product.id
@@ -109,7 +109,7 @@ class ProductListViewTestCase(test.TestCase):
             'form-TOTAL_FORMS': '2',
             'form-INITIAL_FORMS': '1',
         }
-        response = self.client.post(reverse('store:index'), data)
+        response = self.client.post(reverse('webstore:index'), data)
         self.assertEqual(response.status_code, http.HttpResponse.status_code)
         self.assertEqual(Product.objects.count(), 2)
         prod1, prod2 = Product.objects.order_by('id')
@@ -143,7 +143,7 @@ class ProductListViewTestCase(test.TestCase):
             'form-TOTAL_FORMS': '2',
             'form-INITIAL_FORMS': '1',
         }
-        response = self.client.post(reverse('store:index'), data)
+        response = self.client.post(reverse('webstore:index'), data)
         self.assertEqual(response.status_code, http.HttpResponse.status_code)
         self.assertEqual(Product.objects.count(), 1)
         new_product.id = self.product.id

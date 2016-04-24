@@ -1,0 +1,1 @@
+"""WebStore application package."""

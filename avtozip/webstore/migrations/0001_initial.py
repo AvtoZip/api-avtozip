@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 from django.db import migrations, models
 import django.db.models.deletion
 
-from store import fields as custom_fields
+from ..import fields as custom_fields
 
 
 class Migration(migrations.Migration):
@@ -34,7 +34,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=50, verbose_name='Name')),
                 ('parent', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE,
-                                             to='store.ProductCategory', verbose_name='Category')),
+                                             to='webstore.ProductCategory', verbose_name='Category')),
             ],
             options={
                 'verbose_name_plural': 'ProductCategories',
@@ -63,19 +63,19 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='store',
             name='address',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='store.StoreAddress',
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='webstore.StoreAddress',
                                     verbose_name='Address'),
         ),
         migrations.AddField(
             model_name='product',
             name='category',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='store.ProductCategory',
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='webstore.ProductCategory',
                                     verbose_name='Category'),
         ),
         migrations.AddField(
             model_name='product',
             name='store',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='store.Store',
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='webstore.Store',
                                     verbose_name='Store'),
         ),
     ]

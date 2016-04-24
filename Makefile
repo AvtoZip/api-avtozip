@@ -64,7 +64,7 @@ ifeq ($(LEVEL),development)
 endif
 
 loaddata:
-	COMMAND="loaddata store/fixtures/test_store.json" $(MAKE) manage
+	COMMAND="loaddata webstore/fixtures/test_store.json" $(MAKE) manage
 
 manage:
 	cd $(PROJECT) && $(PYTHON) ./manage.py $(COMMAND)

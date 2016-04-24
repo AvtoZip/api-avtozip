@@ -1,4 +1,4 @@
-"""Store API resources."""
+"""WebStore API resources."""
 
 from django.db.models import Q
 
@@ -6,7 +6,7 @@ from tastypie import fields
 from tastypie.http import HttpForbidden
 from tastypie.resources import ModelResource
 
-from store.models import (
+from ..models import (
     Product,
     ProductCategory,
     Store,
@@ -15,7 +15,7 @@ from store.models import (
 
 
 class StoreBaseResource(ModelResource):
-    """Base Resource API for Store application."""
+    """Base Resource API for WebStore application."""
 
     class Meta:
         allowed_methods = ('post', 'put', 'get', 'patch', 'delete')
@@ -36,7 +36,7 @@ class StoreAddressResource(StoreBaseResource):
 class StoreResource(StoreBaseResource):
     """Resource API for the store."""
 
-    address = fields.ForeignKey('store.api.resources.StoreAddressResource', 'address')
+    address = fields.ForeignKey('webstore.api.resources.StoreAddressResource', 'address')
 
     class Meta(StoreBaseResource.Meta):
         queryset = Store.objects.all()
@@ -45,7 +45,7 @@ class StoreResource(StoreBaseResource):
 class ProductCategoryResource(StoreBaseResource):
     """Resource API for category of the product."""
 
-    parent = fields.ForeignKey('store.api.resources.ProductCategoryResource', 'parent', null=True)
+    parent = fields.ForeignKey('webstore.api.resources.ProductCategoryResource', 'parent', null=True)
 
     class Meta(StoreBaseResource.Meta):
         queryset = ProductCategory.objects.all()
@@ -54,8 +54,8 @@ class ProductCategoryResource(StoreBaseResource):
 class ProductResource(StoreBaseResource):
     """Resource API for product in the store."""
 
-    category = fields.ForeignKey('store.api.resources.ProductCategoryResource', 'category')
-    store = fields.ForeignKey('store.api.resources.StoreResource', 'store')
+    category = fields.ForeignKey('webstore.api.resources.ProductCategoryResource', 'category')
+    store = fields.ForeignKey('webstore.api.resources.StoreResource', 'store')
 
     QUERY_KEY = 'query'
 

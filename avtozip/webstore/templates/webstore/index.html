@@ -1,15 +1,15 @@
-{% extends "store/main.html" %}
+{% extends "webstore/main.html" %}
 {% load i18n %}
 
-{% block title %}AvtoZip Store{% endblock %}
+{% block title %}AvtoZip WebStore{% endblock %}
 
 {% block css %}
   {{ block.super }}
-  <link rel="stylesheet" type="text/css" href="{% static 'store/css/main.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'webstore/css/main.css' %}" />
 {% endblock %}
 
 {% block content %}
-  <h1>{% trans 'AvtoZip Store placeholder' %}</h1>
+  <h1>{% trans 'AvtoZip WebStore placeholder' %}</h1>
   <p>{% trans 'ProductList placeholder' %}</p>
   <form method="post">
     {% csrf_token %}

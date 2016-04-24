@@ -27,7 +27,7 @@ INSTALLED_APPS = [
     'httpproxy',
     'tastypie',
 
-    'store',
+    'webstore',
 ]
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',

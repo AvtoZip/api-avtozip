@@ -1,4 +1,4 @@
-.PHONY: build checkmessages clean devserver fasttest install install-py lint manage messages migrate server \
+.PHONY: build checkmessages clean devserver fasttest install install-py lint loaddata manage messages migrate server \
 		shell test
 
 # Project settings
@@ -9,7 +9,7 @@ PROJECT = avtozip
 ENV ?= ./env
 ifeq ($(LEVEL),development)
 	REQUIREMENTS = -r requirements-dev.txt
-else:
+else
 	REQUIREMENTS = -r requirements.txt
 endif
 
@@ -34,7 +34,7 @@ TEST_PROCESSES ?= 4
 
 all: install build
 
-build: migrate
+build: migrate loaddata
 
 checkmessages:
 	COMMAND="checkmessages --verbosity 3" $(MAKE) manage
@@ -62,6 +62,9 @@ lint:
 ifeq ($(LEVEL),development)
 	$(FLAKE8) --statistics ./$(PROJECT)/
 endif
+
+loaddata:
+	COMMAND="loaddata store/fixtures/test_store.json" $(MAKE) manage
 
 manage:
 	cd $(PROJECT) && $(PYTHON) ./manage.py $(COMMAND)

@@ -12,9 +12,7 @@ inject_settings('avtozip.settings.production', locals())
 # Debug settings
 DEBUG = True
 ALLOWED_HOSTS = []
-
-# Django TastyPie settings
-TASTYPIE_DEFAULT_FORMATS = ['json']
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Additional applications
 INSTALLED_APPS += [

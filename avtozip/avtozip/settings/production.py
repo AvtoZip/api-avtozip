@@ -12,7 +12,14 @@ SECRET_KEY = 'kknfrz7qvs%fr(yfui8iuds0pk%a2a0xbux1+i%54eb$^1rf^h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost'
+]
+CORS_ORIGIN_WHITELIST = [
+    '127.0.0.1:8014'
+    'localhost:8014'
+]
 
 # Application definition
 INSTALLED_APPS = [
@@ -23,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'corsheaders',
     'django_extensions',
     'httpproxy',
     'tastypie',
@@ -32,6 +40,7 @@ INSTALLED_APPS = [
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',

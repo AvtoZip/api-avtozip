@@ -3,13 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <title>{% block title %}{% endblock %}</title>
+  {% bootstrap_css %}
   {% block css %}{% endblock %}
   {% block js_header %}{% endblock %}
+  {% bootstrap_javascript %}
 </head>
 <body>
-  {% block header %}{% endblock %}
-  {% block content %}{% endblock %}
-  {% block footer %}{% endblock %}
+  <header class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    {% block header %}{% endblock %}
+    <nav>
+      {% block nav %}{% endblock %}
+    </nav>
+    <aside class="navbar-default sidebar" role="navigation">
+      <div class="sidebar-nav navbar-collapse">
+        {% block aside %}{% endblock %}
+      </div>
+    </aside>
+  </header>
+  <main id="page-wrapper">
+    {% block main %}{% endblock %}
+  </main>
+  <footer>
+    {% block footer %}{% endblock %}
+  </footer>
   {% block js_content %}{% endblock %}
 </body>
 </html>

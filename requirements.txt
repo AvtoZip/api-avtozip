@@ -1,6 +1,9 @@
 defusedxml==0.4.1
 dj-database-url==0.4.0
 Django==1.9.4
+django-bootstrap3==7.0.1
+django-bower==5.2.0
+django-extensions==1.6.1
 django-cors-headers==1.1.0
 django-extensions==1.6.1
 django-http-proxy==0.4.3

@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     'django_extensions',
     'httpproxy',
     'tastypie',
+    'bootstrap3',
+    'djangobower',
 
     'webstore',
 ]
@@ -54,7 +56,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'templates')
+            os.path.join(BASE_DIR, 'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -66,6 +68,8 @@ TEMPLATES = [
             ],
             'builtins': [
                 'django.contrib.staticfiles.templatetags.staticfiles',
+                'django.templatetags.i18n',
+                'bootstrap3.templatetags.bootstrap3',
             ],
         },
     },
@@ -86,7 +90,7 @@ DATABASE_URL = os.environ.get(
     ),
 )
 DATABASES = {
-    'default': dj_database_url.parse(DATABASE_URL)
+    'default': dj_database_url.parse(DATABASE_URL),
 }
 
 # Password validation
@@ -128,6 +132,21 @@ DEFAULT_SKIPPED_LOCALES = ['en']
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'djangobower.finders.BowerFinder',
+)
+
+# django-bower
+# http://django-bower.readthedocs.io/en/latest/installation.html
+BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, 'components')
+
+BOWER_INSTALLED_APPS = (
+    'metisMenu',
+    'font-awesome',
+)
 
 # Proxy settings
 PROXY_TECDOC_URL = 'http://tecdoc.avtozip.ru/api/tecdoc_v1'

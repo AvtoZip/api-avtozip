@@ -8,11 +8,14 @@
 ## Component Stack
 
 | Component         | Version |
-|:------------------|:-------:|
+|:-----------------:|:-------:|
 | Python            |     3.5 |
 | Django            |     1.9 |
 | PostgreSQL        |     9.5 |
 | TastyPie REST API |    0.13 |
+| NVM               |  0.31.4 |
+| npm               | 2.14.20 |
+| bower             |   1.8.0 |
 
 ## Installation instructions
 
@@ -73,6 +76,22 @@
     `. env/bin/activate` or `source env/bin/activate`
 
 1. **Build and install packages:**
+
+  - *Install NVM (virtual Node.js env):*
+
+    Please install NVM from [here] https://github.com/creationix/nvm and execute described steps
+
+  - *Expand NVM with specific version of Node.js:*
+
+    `nvm install 4.4.1`
+
+  - *Install npm:*
+
+    `npm install`
+
+  - *Install Bower:*
+
+    `npm install -g bower`
 
   - *Makefile:*
 

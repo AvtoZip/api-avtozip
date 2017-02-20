@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-24 22:26+0000\n"
+"POT-Creation-Date: 2016-05-24 19:46+0000\n"
 "PO-Revision-Date: 2016-04-14 23:42+0000\n"
 "Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,29 +21,39 @@ msgstr ""
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 "X-Translated-Using: django-rosetta 0.7.11\n"
 
-#: templates/footer.html:3
+#: templates/aside.html:1
+msgid "Dashboard aside"
+msgstr "aside"
+
+#: templates/footer.html:1
 msgid "Footer placeholder"
 msgstr "Место для \"ПОДВАЛА\""
 
-#: templates/header.html:5
+#: templates/header.html:2
 msgid "Header placeholder"
 msgstr "Место для \"ШАПКИ\""
 
-#: templates/header.html:10
+#: templates/header.html:7
 msgid "Language"
 msgstr "Язык"
 
-#: templates/index.html:5
+#: templates/index.html:4
 msgid "AvtoZip DashBoard placeholder"
 msgstr "Место для панели AvtoZip"
 
-#: templates/index.html:7
-msgid "WebStore"
-msgstr "Интернет-Магазин"
-
-#: templates/main.html:4
+#: templates/main.html:3
 msgid "AvtoZip Dashboard"
 msgstr "Панель AvtoZip"
+
+#: templates/nav.html:2
+#, fuzzy
+#| msgid "AvtoZip Dashboard"
+msgid "Dashboard"
+msgstr "Панель AvtoZip"
+
+#: templates/nav.html:3 webstore/models.py:71
+msgid "Store"
+msgstr "Магазин"
 
 #: webstore/fields.py:15
 msgid "Article string"
@@ -117,10 +127,6 @@ msgstr "Количество"
 msgid "Active"
 msgstr "Активный"
 
-#: webstore/models.py:71
-msgid "Store"
-msgstr "Магазин"
-
 #: webstore/templates/webstore/index.html:12
 msgid "AvtoZip WebStore placeholder"
 msgstr "Место для интернет-магазина AvtoZip"
@@ -132,3 +138,6 @@ msgstr "Место для списка продуктов"
 #: webstore/templates/webstore/index.html:38
 msgid "Add"
 msgstr "Добавить"
+
+#~ msgid "WebStore"
+#~ msgstr "Интернет-Магазин"

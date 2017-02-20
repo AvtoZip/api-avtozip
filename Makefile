@@ -1,4 +1,4 @@
-.PHONY: build checkmessages clean devserver fasttest install install-py lint loaddata manage messages migrate server \
+.PHONY: build checkmessages clean devserver fasttest install install-py install-bower static lint loaddata manage messages migrate server \
 		shell test
 
 # Project settings
@@ -50,13 +50,19 @@ devserver: clean
 fasttest:
 	TEST_ARGS="$(TEST_ARGS) --keepdb --parallel $(TEST_PROCESSES)" $(MAKE) test
 
-install: install-github-key install-py
+install: install-github-key install-py install-bower
 
 install-github-key:
 	ssh-keygen -H -F github.com > /dev/null || ssh-keyscan -H github.com >> ~/.ssh/known_hosts
 
 install-py:
 	pip install $(REQUIREMENTS)
+
+install-bower:
+	COMMAND="bower install" $(MAKE) manage
+
+static:
+	COMMAND="collectstatic" $(MAKE) manage
 
 lint:
 ifeq ($(LEVEL),development)

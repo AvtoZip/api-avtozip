@@ -1,0 +1,118 @@
+body {
+    background-color: #f8f8f8;
+}
+
+.navbar-top-links li {
+    display: inline-block;
+}
+
+.navbar-top-links li a {
+    padding: 15px;
+    min-height: 60px;
+}
+
+@media(min-width:768px) {
+    .sidebar {
+        z-index: 1;
+        position: absolute;
+        width: 250px;
+        margin-top: 61px;
+    }
+
+    .navbar-top-links .dropdown-messages,
+    .navbar-top-links .dropdown-tasks,
+    .navbar-top-links .dropdown-alerts {
+        margin-left: auto;
+    }
+}
+
+#page-wrapper {
+    padding: 0 15px;
+    min-height: 568px;
+    background-color: #fff;
+}
+
+@media(min-width:768px) {
+    #page-wrapper {
+        position: inherit;
+        margin: 0 0 0 250px;
+        padding: 0 30px;
+        border-left: 1px solid #e7e7e7;
+    }
+}
+
+div.div-table {
+    display:table;
+    background-color:#eee;
+    border:1px solid  #666666;
+    border-spacing:5px;/*cellspacing:poor IE support for  this*/
+}
+
+div.div-table-row {
+    display:table-row;
+    #width:auto;
+    #clear:both;
+}
+
+div.div-table-row-header {
+    display: table-row;
+    font-weight: bold;
+    text-align: center;
+}
+
+div.div-table-col {
+    #float:left;/*fix for  buggy browsers*/
+    display:table-cell;
+    padding: 5px;
+    margin: 5px;
+    background-color:#e6e6e6;
+}
+
+div.div-table-row-header div.div-table-col {
+    background-color: #ccc;
+}
+
+.sidebar .sidebar-nav.navbar-collapse {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.sidebar .sidebar-search {
+    padding: 15px;
+}
+
+.sidebar ul li {
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.sidebar ul li a.active {
+    background-color: #eee;
+}
+
+.sidebar .arrow {
+    float: right;
+}
+
+.sidebar .fa.arrow:before {
+    content: "\f104";
+}
+
+.sidebar .active>a>.fa.arrow:before {
+    content: "\f107";
+}
+
+.sidebar .nav-second-level li,
+.sidebar .nav-third-level li {
+    border-bottom: 0!important;
+}
+
+.sidebar .nav-second-level li a {
+    padding-left: 37px;
+}
+
+.sidebar .nav-third-level li a {
+    padding-left: 52px;
+}
+
+
+

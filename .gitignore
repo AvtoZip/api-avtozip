@@ -65,6 +65,7 @@ target/
 .idea/
 .DS_Store
 avtozip/static/
+avtozip/components/
 
 # Settings
 avtozip/avtozip/settings/local.py

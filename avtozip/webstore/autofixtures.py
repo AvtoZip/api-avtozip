@@ -29,4 +29,5 @@ class ProductAutoFixture(AutoFixture):
         ),
     }
 
+
 register(Product, ProductAutoFixture)

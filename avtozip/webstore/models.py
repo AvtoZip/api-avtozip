@@ -20,9 +20,11 @@ class StoreAddress(models.Model):
     def __str__(self):
         """String representation of store address model."""
         address_line = ', '.join(
-            [token for token in [
-                self.zip, self.country, self.state, self.city, self.street, self.line1, self.line2,
-            ] if token],
+            [
+                token for token in [
+                    self.zip, self.country, self.state, self.city, self.street, self.line1, self.line2,
+                ] if token
+            ],
         )
         return '<{model_name}#{id}: {address_line}>'.format(
             model_name=self.__class__.__name__, id=self.id, address_line=address_line,

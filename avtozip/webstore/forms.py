@@ -28,6 +28,7 @@ class ProductForm(BaseModelForm):
         'count': forms.NumberInput(),
     }
 
+
 # Formset for products based on `ProductForm` class
 ProductFormSet = forms.modelformset_factory(
     model=Product,

@@ -30,7 +30,7 @@ class ArticleField(models.CharField):
             'max_length': self.max_length,
             'error_messages': {
                 'invalid': _ul('Should contain only letters, digits, dashes and whitespaces'),
-            }
+            },
         }
         defaults.update(kwargs)
         return super(ArticleField, self).formfield(**defaults)

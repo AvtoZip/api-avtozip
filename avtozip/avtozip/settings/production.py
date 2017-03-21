@@ -14,11 +14,11 @@ SECRET_KEY = 'kknfrz7qvs%fr(yfui8iuds0pk%a2a0xbux1+i%54eb$^1rf^h'
 DEBUG = False
 ALLOWED_HOSTS = [
     '127.0.0.1',
-    'localhost'
+    'localhost',
 ]
 CORS_ORIGIN_WHITELIST = [
-    '127.0.0.1:8014'
-    'localhost:8014'
+    '127.0.0.1:8014',
+    'localhost:8014',
 ]
 
 # Application definition
@@ -54,7 +54,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'templates')
+            os.path.join(BASE_DIR, 'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -86,7 +86,7 @@ DATABASE_URL = os.environ.get(
     ),
 )
 DATABASES = {
-    'default': dj_database_url.parse(DATABASE_URL)
+    'default': dj_database_url.parse(DATABASE_URL),
 }
 
 # Password validation
